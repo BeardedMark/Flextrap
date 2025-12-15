@@ -1,0 +1,63 @@
+$colors: (
+  light: #fff,
+  dark: #000,
+
+  success: #73C991,
+  warning: #DBA710,
+  danger: #F88070,
+
+  brand: #4e8bff,
+  accent: #F0C875,
+  prime: #FCFBFB,
+  second: #a3a4ac,
+  main: #303338,
+  other: #EFEDEB
+);
+
+$fonts: (
+  4xl: 64px,
+  3xl: 48px,
+  xxl: 32px,
+  xl: 24px,
+  lg: 20px,
+  md: 16px,
+  sm: 14px,
+  xs: 12px,
+  xxs: 10px,
+  3xs: 8px,
+  4xs: 6px
+);
+
+$sizes: (
+  4xl: 144px,
+  3xl: 98px,
+  xxl: 55px,
+  xl: 34px,
+  lg: 21px,
+  md: 13px,
+  sm: 8px,
+  xs: 5px,
+  xxs: 3px,
+  3xs: 2px,
+  4xs: 1px
+);
+
+$times: (
+  inst: 0.1s,
+  fast: 0.2s,
+  norm: 0.3s,
+  slow: 0.5s
+);
+
+$aligns: (
+  start: start,
+  center: center,
+  end: end,
+);
+
+$positions: (
+  t: top,
+  r: right,
+  b: bottom,
+  l: left
+);

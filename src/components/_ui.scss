@@ -1,0 +1,29 @@
+@use "../variables" as *;
+@use "../utilities/spacing" as *;
+@use "../utilities/misc" as *;
+@use "../utilities/font" as *;
+@use "frame" as *;
+
+.but{
+    @extend .time-fast;
+    @extend .pad-md-xs;
+    @extend .font-sm;
+}
+
+.but-brand {
+    @extend .but;
+    @extend .frame-brand;
+
+    &:hover{
+        @extend .frame-main;
+    }
+}
+
+.but-main {
+    @extend .but;
+    @extend .frame-main;
+    
+    &:hover{
+        @extend .frame-brand;
+    }
+}

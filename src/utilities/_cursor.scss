@@ -1,0 +1,47 @@
+// ---------- Курсоры ----------
+$cursor-map: (
+  alias: alias,
+  auto: auto,
+  copy: copy,
+  def: default,
+  point: pointer,
+  text: text,
+  text-v: vertical-text,
+  move: move,
+  help: help,
+  forb: not-allowed,
+  wait: wait,
+  prog: progress,
+  
+  // Drag&Drop
+  grab: grab,
+  grabg: grabbing,
+  n-drop: no-drop,
+  a-scr: all-scroll,
+  col-res: col-resize,
+  row-res: row-resize,
+  n-res: n-resize,
+  s-res: s-resize,
+  e-res: e-resize,
+  w-res: w-resize,
+  ne-res: ne-resize,
+  nw-res: nw-resize,
+  se-res: se-resize,
+  sw-res: sw-resize,
+
+  // Misc
+  none: none,
+  cross: crosshair,
+  cell: cell,
+  z-in: zoom-in,
+  z-out: zoom-out,
+  c-menu: context-menu
+);
+
+@each $name, $value in $cursor-map {
+  .curs-#{$name} { cursor: $value; }
+}
+
+.curs-lock {
+  pointer-events: none;
+}

@@ -1,0 +1,26 @@
+@use "../variables" as *;
+
+// Цвет текста
+@each $name, $value in $colors {
+  .font-#{$name} { color: var(--color-#{$name}); }
+  .hov-font-#{$name}:hover { color: var(--color-#{$name}); }
+}
+
+// Размер шрифта
+@each $name, $value in $fonts {
+  .font-#{$name} { font-size: $value; }
+}
+
+// Красная строка
+@each $name, $value in $sizes {
+  .font-ind-#{$name} { text-indent: $value; }
+}
+
+// Выравнивание текста
+@each $name, $value in $aligns {
+  .font-#{$name} { text-align: $value; }
+}
+
+.font-bold {font-weight: bold;}
+.font-through {text-decoration: line-through;}
+.font-overflow {white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;}

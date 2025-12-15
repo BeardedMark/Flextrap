@@ -1,0 +1,55 @@
+@use "../variables" as *;
+
+// Размер скругления
+.rad-max { border-radius: 100vmax; }
+@each $name, $value in $sizes {
+  .rad-#{$name} { border-radius: $value; }
+  @each $name2, $value2 in $sizes2 {
+    .rad-#{$name}-#{$name2} { border-radius: $value2; }
+    .rad-#{$name}-#{$name2}:hover { border-radius: $value2; }
+  }
+  .hov-rad-#{$name}:hover { border-radius: $value; }
+}
+
+// Цвет обводки
+@each $name, $value in $colors {
+    .bord-#{$name} { border-width: 1px; border-style: solid; border-color: var(--color-#{$name}); }
+
+    @each $name2, $value2 in $colors2 {
+        .bord-#{$name}-to-#{$name2} { border-width: 1px; border-style: solid; border-color: var(--color-#{$name}); }
+        .bord-t-#{$name}-to-#{$name2} {border-width: 1px 0 0 0; border-style: solid; border-color: var(--color-#{$name});}
+        .bord-t-#{$name}-to-#{$name2} {border-width: 1px 0 0 0; border-style: solid; border-color: var(--color-#{$name});}
+        .bord-r-#{$name}-to-#{$name2} {border-width: 0 1px 0 0; border-style: solid; border-color: var(--color-#{$name});}
+        .bord-b-#{$name}-to-#{$name2} {border-width: 0 0 1px 0; border-style: solid; border-color: var(--color-#{$name});}
+        .bord-l-#{$name}-to-#{$name2} {border-width: 0 0 0 1px; border-style: solid; border-color: var(--color-#{$name});}
+        .bord-x-#{$name}-to-#{$name2} {border-width: 0 1px 0 1px; border-style: solid; border-color: var(--color-#{$name});}
+        .bord-y-#{$name}-to-#{$name2} {border-width: 1px 0 1px 0; border-style: solid; border-color: var(--color-#{$name});}
+        
+        .bord-#{$name}-to-#{$name2}:hover { border-width: 1px; border-style: solid; border-color: var(--color-#{$name2}); }
+        .bord-t-#{$name}-to-#{$name2}:hover {border-width: 1px 0 0 0; border-style: solid; border-color: var(--color-#{$name2});}
+        .bord-t-#{$name}-to-#{$name2}:hover {border-width: 1px 0 0 0; border-style: solid; border-color: var(--color-#{$name2});}
+        .bord-r-#{$name}-to-#{$name2}:hover {border-width: 0 1px 0 0; border-style: solid; border-color: var(--color-#{$name2});}
+        .bord-b-#{$name}-to-#{$name2}:hover {border-width: 0 0 1px 0; border-style: solid; border-color: var(--color-#{$name2});}
+        .bord-l-#{$name}-to-#{$name2}:hover {border-width: 0 0 0 1px; border-style: solid; border-color: var(--color-#{$name2});}
+        .bord-x-#{$name}-to-#{$name2}:hover {border-width: 0 1px 0 1px; border-style: solid; border-color: var(--color-#{$name2});}
+        .bord-y-#{$name}-to-#{$name2}:hover {border-width: 1px 0 1px 0; border-style: solid; border-color: var(--color-#{$name2});}
+    }
+
+    .bord-t-#{$name}{border-width: 1px 0 0 0; border-style: solid; border-color: var(--color-#{$name});}
+    .bord-r-#{$name}{border-width: 0 1px 0 0; border-style: solid; border-color: var(--color-#{$name});}
+    .bord-b-#{$name}{border-width: 0 0 1px 0; border-style: solid; border-color: var(--color-#{$name});}
+    .bord-l-#{$name}{border-width: 0 0 0 1px; border-style: solid; border-color: var(--color-#{$name});}
+
+    .bord-x-#{$name}{border-width: 0 1px 0 1px; border-style: solid; border-color: var(--color-#{$name});}
+    .bord-y-#{$name}{border-width: 1px 0 1px 0; border-style: solid; border-color: var(--color-#{$name});}
+
+    .hov-bord-#{$name}:hover { border-width: 1px; border-style: solid; border-color: var(--color-#{$name}); }
+
+    .hov-bord-t-#{$name}:hover {border-width: 1px 0 0 0; border-style: solid; border-color: var(--color-#{$name});}
+    .hov-bord-r-#{$name}:hover {border-width: 0 1px 0 0; border-style: solid; border-color: var(--color-#{$name});}
+    .hov-bord-b-#{$name}:hover {border-width: 0 0 1px 0; border-style: solid; border-color: var(--color-#{$name});}
+    .hov-bord-l-#{$name}:hover {border-width: 0 0 0 1px; border-style: solid; border-color: var(--color-#{$name});}
+
+    .hov-bord-x-#{$name}:hover {border-width: 0 1px 0 1px; border-style: solid; border-color: var(--color-#{$name});}
+    .hov-bord-y-#{$name}:hover {border-width: 1px 0 1px 0; border-style: solid; border-color: var(--color-#{$name});}
+}

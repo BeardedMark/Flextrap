@@ -1,0 +1,8 @@
+@use "../variables" as *;
+
+:root {
+    // Палитра цветов
+    @each $name, $value in $colors {
+        --color-#{$name}: #{$value};
+    }
+}

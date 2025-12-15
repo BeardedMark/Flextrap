@@ -1,0 +1,28 @@
+@use "../variables" as *;
+
+.flex {display: flex;}
+
+.flex-grow {display: flex; flex-grow: 1;}
+.flex-n-grow {display: flex; flex-grow: 0;}
+
+.flex-wrap {display: flex; flex-wrap: wrap;}
+.flex-n-wrap {display: flex; flex-wrap: nowrap;}
+
+@each $name, $value in $aligns {
+    .flex-#{$name} { display: flex; justify-content: $value; align-items: $value; }
+    .jc-#{$name} { display: flex; justify-content: $value; }
+    .ai-#{$name} { display: flex; align-items: $value; }
+}
+
+.flex-row {display: flex; flex-direction: row;}
+.flex-row-rev {display: flex; flex-direction: row-reverse;}
+
+.flex-col {display: flex; flex-direction: column;}
+.flex-col-rev {display: flex; flex-direction: column-reverse;}
+
+@each $name, $value in $sizes {
+    .flex-row-#{$name} {display: flex; flex-direction: row; gap: $value;}
+    .flex-row-#{$name}-rev {display: flex; flex-direction: row-reverse; gap: $value;}
+    .flex-col-#{$name} {display: flex; flex-direction: column; gap: $value;}
+    .flex-col-#{$name}-rev {display: flex; flex-direction: column-reverse; gap: $value;}
+}

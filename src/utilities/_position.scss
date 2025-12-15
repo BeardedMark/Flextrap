@@ -1,0 +1,35 @@
+@use "../variables" as *;
+
+.pos-fix{position: fixed;}
+.pos-sta{position: static;}
+.pos-sti{position: sticky;}
+.pos-abs{position: absolute;}
+.pos-rel{position: relative;}
+
+// Отступы
+.pos-t {top: 0;}
+.pos-b {bottom: 0;}
+.pos-r {right: 0;}
+.pos-l {left: 0;}
+.pos-x {left: 0; right: 0;}
+.pos-y {top: 0; bottom: 0;}
+.pos-fill{top: 0; left: 0; right: 0; bottom: 0;}
+
+@each $name, $value in $sizes {
+    .pos-t-#{$name} { top: $value; }
+    .pos-b-#{$name} { bottom: $value; }
+    .pos-r-#{$name} { right: $value; }
+    .pos-l-#{$name} { left: $value; }
+    .pos-x-#{$name} { left: $value; right: $value; }
+    .pos-y-#{$name} { top: $value; bottom: $value; }
+    .pos-fill-#{$name} {top: $value; left: $value; right: $value; bottom: $value;}
+}
+
+.h-max { height: 100%; }
+.w-max { width: 100%; }
+
+.z-0 { z-index: 0; }
+@for $index from 1 through 100 {
+    .z-front-#{$index} { z-index: $index; }
+    .z-back-#{$index} { z-index: #{$index * -1}; }
+}

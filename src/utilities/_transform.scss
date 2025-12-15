@@ -1,0 +1,29 @@
+@use "../variables" as *;
+
+// ---------- Миксины ----------
+
+// Универсальный миксин для transform-классов
+@mixin transform-class($prefix, $prop, $value) {
+  .#{$prefix} { transform: #{$prop}($value); }
+  .hov-#{$prefix}:hover { transform: #{$prop}($value); }
+}
+
+// ---------- Смещение ----------
+@each $name, $value in $sizes {
+  @include transform-class(move-b-#{$name}, translateY, $value);
+  @include transform-class(move-t-#{$name}, translateY, $value * -1);
+  @include transform-class(move-r-#{$name}, translateX, $value);
+  @include transform-class(move-l-#{$name}, translateX, $value * -1);
+}
+
+// ---------- Поворот ----------
+@for $i from 1 through 10 {
+  $deg: $i * 10;
+  $scale: $i * 0.01;
+
+  @include transform-class(rotate-r-#{$i}, rotate, #{$deg}deg);
+  @include transform-class(rotate-l-#{$i}, rotate, #{$deg * -1}deg);
+  
+  @include transform-class(scale-inc-#{$i}, scale, #{$scale + 1});
+  @include transform-class(scale-dec-#{$i}, scale, #{$scale});
+}

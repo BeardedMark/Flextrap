@@ -1,0 +1,29 @@
+@use "../variables" as *;
+
+// ---------- Миксин для фоновых цветов ----------
+@mixin back-class($prefix, $color) {
+  .#{$prefix} { background-color: $color; }
+  .hov-#{$prefix}:hover { background-color: $color; }
+}
+
+// ---------- Основные цвета из карты ----------
+@each $name, $value in $colors {
+  @include back-class(back-#{$name}, var(--color-#{$name}));
+}
+@each $name, $value in $colors {
+  @each $toName, $toValue in $colors {
+    .back-#{$name}-to-#{$toName} { background-color: var(--color-#{$name}); }
+    .back-#{$name}-to-#{$toName}:hover { background-color: var(--color-#{$toName}); }
+  }
+}
+
+// ---------- Полупрозрачные фоны ----------
+  @include back-class(back-dark, rgba(0, 0, 0));
+  @include back-class(back-white, rgba(255, 255, 255));
+@for $i from 1 through 9 {
+  $alpha: $i * 0.1;
+  $percent: $i * 10;
+
+  @include back-class(back-dark-#{$percent}, rgba(0, 0, 0, $alpha));
+  @include back-class(back-light-#{$percent}, rgba(255, 255, 255, $alpha));
+}

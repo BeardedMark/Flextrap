@@ -1,0 +1,25 @@
+@use "../variables" as *;
+
+.over-hide {overflow: hidden;}
+
+@each $name, $value in $times {
+  .time-#{$name} { transition: $value; }
+  .hov-time-#{$name}:hover { transition: $value; }
+}
+
+
+@for $i from 0 through 10 {
+  $opacity: $i * 0.1;
+  $percent: $i * 10;
+
+  .opac-#{$percent} { opacity: $opacity; }
+  .hov-opac-#{$ipercent}:hover { opacity: $opacity; }
+
+  @for $j from 0 through 10 {
+    $toOpacity: $j * 0.1;
+    $toPercent: $j * 10;
+
+    .opac-#{$percent}-#{$toPercent} { opacity: $opacity; }
+    .opac-#{$percent}-#{$toPercent}:hover { opacity: $toOpacity; }
+  }
+}

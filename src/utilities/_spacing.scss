@@ -1,0 +1,43 @@
+@use "../variables" as *;
+
+$targets: (
+  pad: padding,
+  mar: margin,
+);
+
+// Размеры отступов
+@each $targetName, $targetValue in $targets {
+    @each $name, $value in $sizes {
+        .#{$targetName}-#{$name} {#{$targetValue}: $value;}
+        .#{$targetName}-t-#{$name} {#{$targetValue}-top: $value;}
+        .#{$targetName}-b-#{$name} {#{$targetValue}-bottom: $value;}
+        .#{$targetName}-r-#{$name} {#{$targetValue}-right: $value;}
+        .#{$targetName}-l-#{$name} {#{$targetValue}-left: $value;}
+        .#{$targetName}-x-#{$name} {#{$targetValue}-left: $value; #{$targetValue}-right: $value;}
+        .#{$targetName}-y-#{$name} {#{$targetValue}-top: $value; #{$targetValue}-bottom: $value;}
+
+        .hov-#{$targetName}-#{$name}:hover {#{$targetValue}: $value;}
+        .hov-#{$targetName}-t-#{$name}:hover {#{$targetValue}-top: $value;}
+        .hov-#{$targetName}-b-#{$name}:hover {#{$targetValue}-bottom: $value;}
+        .hov-#{$targetName}-r-#{$name}:hover {#{$targetValue}-right: $value;}
+        .hov-#{$targetName}-l-#{$name}:hover {#{$targetValue}-left: $value;}
+        .hov-#{$targetName}-x-#{$name}:hover {#{$targetValue}-left: $value; #{$targetValue}-right: $value;}
+        .hov-#{$targetName}-y-#{$name}:hover {#{$targetValue}-top: $value; #{$targetValue}-bottom: $value;}
+
+        
+        @each $subName, $subValue in $sizes {
+            .#{$targetName}-#{$name}-#{$subName} {
+                #{$targetValue}-left: $value;
+                #{$targetValue}-right: $value;
+                #{$targetValue}-top: $subValue;
+                #{$targetValue}-bottom: $subValue;
+            }
+            .hov-#{$targetName}-#{$name}-#{$subName}:hover {
+                #{$targetValue}-left: $value;
+                #{$targetValue}-right: $value;
+                #{$targetValue}-top: $subValue;
+                #{$targetValue}-bottom: $subValue;
+            }
+        }
+    }
+}

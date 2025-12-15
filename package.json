@@ -1,0 +1,24 @@
+{
+  "name": "flextrap",
+  "version": "1.0.15",
+  "description": "Библиотека разметки, основанная на Flexbox и золотых пропорциях (последовательность Фибоначчи)",
+  "main": "dist/style.css",
+  "scripts": {
+    "build": "npx sass src/style.scss dist/style.css --style=compressed",
+    "dev": "npx sass --watch src/style.scss dist/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BeardedMark/Flextrap.git"
+  },
+  "keywords": ["css", "scss", "library", "frontend"],
+  "author": "BeardedMark",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BeardedMark/Flextrap/issues"
+  },
+  "homepage": "https://github.com/BeardedMark/Flextrap#readme",
+  "devDependencies": {
+    "sass": "^1.79.0"
+  }
+}
