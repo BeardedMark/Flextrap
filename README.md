@@ -22,13 +22,31 @@ npm install flextrap
 
 ## Использование
 
+### Подключение через CDN
+
+Самый простой способ подключить библиотеку — использовать CDN:
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flextrap@latest/dist/style.css">
+```
+
+Или с указанием конкретной версии:
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flextrap@1.0.15/dist/style.css">
+```
+
+### Локальное подключение
+
 Подключите скомпилированный CSS файл в ваш проект:
 
 ```html
 <link rel="stylesheet" href="node_modules/flextrap/dist/style.css">
 ```
 
-Или импортируйте SCSS исходники для кастомизации:
+### Использование SCSS исходников
+
+Импортируйте SCSS исходники для кастомизации:
 
 ```scss
 @import 'node_modules/flextrap/src/style.scss';
